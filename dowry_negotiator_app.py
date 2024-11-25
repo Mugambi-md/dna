@@ -1,4 +1,4 @@
-def body_count(age):
+def body_count(age, asked_dowry):
     "Determines body count based on age"
     if age < 18:
         return 5
@@ -9,7 +9,7 @@ def body_count(age):
     elif age < 30:
         return 15
     else:
-        return 20
+        return asked_dowry-1
     
 
 def dowry_negotiation(name, body_count_result, asked_dowry, college):
@@ -33,7 +33,7 @@ def get_user_data():
         print("Please enter 'yes' or 'no'.")
         college_input = input("Has she gone to college?(yes/no): ")
     college = college_input=="yes"
-    body_count_result = body_count(age)
+    body_count_result = body_count(age, asked_dowry)
     dowry_negotiation(name, body_count_result, asked_dowry, college)
 
 
